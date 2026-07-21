@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none" role="img" aria-label="">
+  <defs>
+    <linearGradient id="co-bg" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#0c1422"/><stop offset="1" stop-color="#05080d"/></linearGradient>
+    <linearGradient id="co-g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8ec5ff"/><stop offset="0.5" stop-color="#68b2ff"/><stop offset="1" stop-color="#007dfe"/></linearGradient>
+    <radialGradient id="co-glow" cx="0.5" cy="0.5" r="0.5"><stop stop-color="#68b2ff" stop-opacity="0.4"/><stop offset="1" stop-color="#68b2ff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#co-bg)"/>
+  <circle cx="300" cy="170" r="230" fill="url(#co-glow)"/>
+  <path d="M300 86 L392 120 V196 C392 252 354 284 300 306 C246 284 208 252 208 196 V120 Z" fill="url(#co-g)" opacity="0.08"/>
+  <path d="M300 86 L392 120 V196 C392 252 354 284 300 306 C246 284 208 252 208 196 V120 Z" fill="none" stroke="url(#co-g)" stroke-width="4"/>
+  <path d="M260 190 l28 28 l54 -60" fill="none" stroke="url(#co-g)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

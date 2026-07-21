@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none" role="img" aria-label="Scaling with consistent quality illustration">
+  <defs>
+    <linearGradient id="sc-bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c1422"/>
+      <stop offset="1" stop-color="#05080d"/>
+    </linearGradient>
+    <linearGradient id="sc-grad" x1="0" y1="1" x2="1" y2="0">
+      <stop stop-color="#8ec5ff"/>
+      <stop offset="0.5" stop-color="#68b2ff"/>
+      <stop offset="1" stop-color="#007dfe"/>
+    </linearGradient>
+    <radialGradient id="sc-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#68b2ff" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#68b2ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#sc-bg)"/>
+  <circle cx="400" cy="230" r="250" fill="url(#sc-glow)"/>
+
+  <!-- ascending steps -->
+  <g fill="url(#sc-grad)">
+    <rect x="214" y="300" width="78" height="70" rx="10" opacity="0.45"/>
+    <rect x="306" y="252" width="78" height="118" rx="10" opacity="0.6"/>
+    <rect x="398" y="204" width="78" height="166" rx="10" opacity="0.78"/>
+    <rect x="490" y="150" width="78" height="220" rx="10"/>
+  </g>
+
+  <!-- growth arrow -->
+  <g stroke="url(#sc-grad)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M232 282 L344 234 L436 186 L552 120"/>
+    <path d="M524 114 L558 112 L556 146"/>
+  </g>
+
+  <!-- quality check badge -->
+  <circle cx="638" cy="170" r="46" fill="#05080d" stroke="url(#sc-grad)" stroke-width="3.4"/>
+  <path d="M616 170 l14 15 l30 -32" fill="none" stroke="url(#sc-grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

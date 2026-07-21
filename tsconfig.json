@@ -1,0 +1,10 @@
+{
+  // Extends the tsconfig Nuxt generates in .nuxt/ (via `nuxt prepare`, which
+  // runs on postinstall). That generated config wires up the auto-import type
+  // declarations (.nuxt/imports.d.ts, .nuxt/nuxt.d.ts) so the editor resolves
+  // composables like useSiteData/useAsset and Vue/Nuxt globals (ref, useHead…)
+  // without manual imports. Do NOT exclude .nuxt here — that's where those
+  // declarations live.
+  "extends": "./.nuxt/tsconfig.json",
+  "exclude": ["node_modules", "dist", ".output", ".data", ".nitro", ".cache"]
+}

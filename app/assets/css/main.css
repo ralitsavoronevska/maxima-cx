@@ -1,0 +1,677 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ---------------------------------------------------------------------------
+   Theme (Tailwind v4, CSS-first). Replaces tailwind.config.ts.
+--------------------------------------------------------------------------- */
+@theme {
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-bg: #050706;
+  --color-bg-soft: #090c0a;
+  --color-panel: #0d110f;
+  --color-panel-2: #121814;
+  --color-ink: #f5f8f5;
+  --color-muted: #aab5ad;
+  --color-line: rgba(255, 255, 255, 0.1);
+
+  --color-primary-100: #d9ecff;
+  --color-primary-200: #b4d9ff;
+  --color-primary-300: #8ec5ff;
+  --color-primary-400: #68b2ff;
+  --color-primary-500: #007dfe;
+
+  --animate-fade-up: fade-up 0.7s ease both;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(3deg);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 92px;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply text-ink antialiased;
+    width: 100%;
+    max-width: 100%;
+    background:
+      radial-gradient(
+        circle at 88% 6%,
+        rgba(0, 125, 254, 0.16),
+        transparent 27rem
+      ),
+      radial-gradient(
+        circle at 8% 14%,
+        rgba(142, 197, 255, 0.1),
+        transparent 28rem
+      ),
+      #050706;
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .logo {
+    width: 48px;
+    height: 44px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Components — reusable, effect-heavy design-system atoms.
+   (Layout/spacing live as Tailwind utilities in the templates.)
+--------------------------------------------------------------------------- */
+@layer components {
+  /* Page width wrapper */
+  .shell {
+    width: min(calc(100% - 40px), 1220px);
+    margin-inline: auto;
+  }
+  @media (max-width: 600px) {
+    .shell {
+      width: min(calc(100% - 24px), 1220px);
+    }
+  }
+
+  /* Section surface with layered radial glows */
+  .surface-best {
+    overflow: hidden;
+    background:
+      radial-gradient(
+        circle at 80% 16%,
+        rgba(85, 89, 138, 0.16),
+        transparent 30rem
+      ),
+      radial-gradient(
+        circle at 7% 88%,
+        rgba(142, 197, 255, 0.15),
+        transparent 26rem
+      ),
+      linear-gradient(135deg, #03080d 0%, #04080c 50%, #020707 100%);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 0;
+    border-radius: 999px;
+    padding: 13px 20px;
+    cursor: pointer;
+    font-weight: 780;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn-primary {
+    color: #081009;
+    background: linear-gradient(135deg, #8ec5ff, #68b2ff);
+    box-shadow: 0 12px 36px rgba(104, 178, 255, 0.18);
+  }
+  .btn-secondary {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  @media (max-width: 1050px) {
+    .btn {
+      padding: 12px 17px;
+    }
+  }
+
+  /* Brand lockup */
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 850;
+    letter-spacing: -0.045em;
+    font-size: 1.28rem;
+    white-space: nowrap;
+  }
+
+  /* Nav links + animated underline */
+  .nav-link {
+    position: relative;
+    padding: 28px 0;
+    transition: color 0.2s ease;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: 19px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #8ec5ff, #68b2ff);
+    transition: right 0.22s ease;
+  }
+  .nav-link:hover {
+    color: #fff;
+  }
+  .nav-link:hover::after {
+    right: 0;
+  }
+  .nav-link--active {
+    color: #8ec5ff;
+  }
+  .nav-link--active::after {
+    right: 0;
+  }
+  @media (max-width: 900px) {
+    .nav-link {
+      padding: 12px;
+    }
+    .nav-link::after {
+      display: none;
+    }
+  }
+
+  /* Mobile dropdown menu container */
+  @media (max-width: 900px) {
+    .nav-menu {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      top: 72px;
+      flex-direction: column;
+      align-items: stretch !important;
+      gap: 4px !important;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      background: rgba(8, 11, 9, 0.98);
+      box-shadow: 0 0 18px #d9ecff;
+    }
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    color: transparent;
+    background: linear-gradient(90deg, #8ec5ff, #68b2ff, #007dfe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Negative letter-spacing on headings shaves the right edge of the last
+       glyph once the gradient is clipped to the text box; this restores it. */
+    padding-right: 0.08em;
+  }
+
+  /* Floating orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+  }
+  .orb-one {
+    width: 390px;
+    height: 390px;
+    background:
+      radial-gradient(
+        circle at 35% 25%,
+        rgba(255, 255, 255, 0.8),
+        transparent 6%
+      ),
+      radial-gradient(
+        circle at 34% 30%,
+        #8ec5ff,
+        #68b2ff 35%,
+        #007dfe 68%,
+        #0a0f0d 72%
+      );
+    box-shadow: 0 0 90px rgba(104, 178, 255, 0.2);
+    animation: float 7s ease-in-out infinite;
+  }
+  .orb-two {
+    width: 120px;
+    height: 120px;
+    right: 4%;
+    top: 8%;
+    background: radial-gradient(
+      circle at 35% 30%,
+      #fff,
+      #007dfe 15%,
+      #1b1d39 72%
+    );
+    box-shadow: 0 0 50px rgba(0, 125, 254, 0.36);
+    animation: float 5.6s ease-in-out infinite reverse;
+  }
+  @media (max-width: 900px) {
+    .orb-one {
+      width: 310px;
+      height: 310px;
+    }
+  }
+  @media (max-width: 600px) {
+    .orb-one {
+      width: 250px;
+      height: 250px;
+    }
+    .orb-two {
+      width: 88px;
+      height: 88px;
+    }
+  }
+
+  /* Glass cards (hero visual) */
+  .glass-card {
+    position: absolute;
+    width: 268px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 22px;
+    background: rgba(9, 14, 11, 0.68);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.45);
+  }
+  .glass-card--top {
+    left: 0;
+    top: 14%;
+    transform: rotate(-5deg);
+  }
+  .glass-card--bottom {
+    right: 0;
+    bottom: 10%;
+    transform: rotate(4deg);
+  }
+  .glass-label {
+    color: #aab5ad;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .glass-value {
+    margin-top: 6px;
+    font-size: 1.48rem;
+    font-weight: 850;
+    letter-spacing: -0.04em;
+  }
+  .trend {
+    margin-top: 12px;
+    height: 34px;
+    border-radius: 10px;
+    background:
+      linear-gradient(
+        135deg,
+        transparent 0 20%,
+        rgba(142, 197, 255, 0.85) 21% 24%,
+        transparent 25% 35%,
+        rgba(142, 197, 255, 0.85) 36% 39%,
+        transparent 40% 52%,
+        rgba(142, 197, 255, 0.85) 53% 56%,
+        transparent 57% 67%,
+        rgba(142, 197, 255, 0.85) 68% 72%,
+        transparent 73%
+      ),
+      rgba(142, 197, 255, 0.05);
+  }
+  @media (max-width: 600px) {
+    .glass-card {
+      width: 210px;
+      padding: 15px;
+    }
+    .glass-card--top {
+      top: 8%;
+    }
+    .glass-card--bottom {
+      bottom: 4%;
+    }
+  }
+
+  /* Cards */
+  .card {
+    position: relative;
+    overflow: hidden;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.018)
+    );
+    transition:
+      transform 0.25s ease,
+      border-color 0.25s ease;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(142, 197, 255, 0.34);
+  }
+  .card h3 {
+    font-size: 1.25rem;
+    letter-spacing: -0.035em;
+    margin-bottom: 0;
+  }
+  .card p {
+    margin: 0;
+    color: #aab5ad;
+  }
+  .card-glow {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    right: -60px;
+    top: -60px;
+    border-radius: 50%;
+    background: rgba(0, 125, 254, 0.22);
+    filter: blur(28px);
+  }
+
+  /* Info card (icon + heading) */
+  .info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1.25rem;
+    backdrop-filter: blur(20px);
+    background-image: linear-gradient(#ffffff1a, #fff0);
+  }
+  .info-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Image frame with glow (best/who-we-are media) */
+  .media-frame {
+    position: relative;
+  }
+  .media-frame::before {
+    content: "";
+    position: absolute;
+    inset: -34px;
+    z-index: 0;
+    border-radius: 48px;
+    background: radial-gradient(
+      circle,
+      rgba(85, 89, 138, 0.27),
+      transparent 68%
+    );
+    filter: blur(20px);
+  }
+  .media-frame img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 42px 42px 92px 42px;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.48);
+  }
+  .media-frame--alt::before {
+    background: radial-gradient(
+      circle,
+      rgba(142, 197, 255, 0.23),
+      transparent 68%
+    );
+  }
+  .media-frame--alt img {
+    border-radius: 42px 42px 42px 92px;
+  }
+  /* On the stacked tablet layout a framed image spans the full column and
+     dominates the section — cap its width (height follows via the 16/9 aspect
+     ratio) and centre it. Phones are already narrower than this cap. */
+  @media (max-width: 900px) {
+    .media-frame {
+      max-width: 480px;
+      margin-inline: auto;
+    }
+  }
+  @media (max-width: 600px) {
+    .media-frame img,
+    .media-frame--alt img {
+      border-radius: 28px 28px 64px 28px;
+    }
+  }
+
+  /* Feature icon tiles */
+  .feature-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 12px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.025);
+    box-shadow: inset 0 0 28px rgba(142, 197, 255, 0.025);
+  }
+  .feature-icon svg {
+    width: 29px;
+    height: 29px;
+    fill: none;
+    stroke: #8ec5ff;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 8px rgba(142, 197, 255, 0.28));
+  }
+
+  /* Why cards glow + symbol */
+  .why-card {
+    position: relative;
+    isolation: isolate;
+  }
+  .why-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    opacity: 0.55;
+    border-radius: 28px;
+    background:
+      radial-gradient(
+        circle at 30% 25%,
+        rgba(0, 125, 254, 0.25),
+        transparent 42%
+      ),
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.01)
+      );
+  }
+  .why-symbol {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    color: rgba(142, 197, 255, 0.85);
+    font-size: 2rem;
+  }
+  .why-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.55rem;
+  }
+
+  /* CTA panel decorative orb + base surface */
+  .cta-panel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(142, 197, 255, 0.22);
+    border-radius: 34px;
+    background:
+      linear-gradient(
+        130deg,
+        rgba(142, 197, 255, 0.13),
+        rgba(0, 125, 254, 0.08) 54%,
+        rgba(255, 255, 255, 0.03)
+      ),
+      #0d110f;
+  }
+  .cta-panel::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    bottom: -160px;
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at 35% 30%,
+      #fff,
+      #8ec5ff 8%,
+      #68b2ff 35%,
+      #007dfe 72%,
+      transparent 73%
+    );
+    opacity: 0.75;
+    filter: blur(2px);
+  }
+
+  /* Mission quote panel + decorative marks */
+  .quote-panel {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 34px;
+    background:
+      radial-gradient(
+        circle at 82% 12%,
+        rgba(0, 125, 254, 0.12),
+        transparent 30rem
+      ),
+      radial-gradient(
+        circle at 8% 88%,
+        rgba(142, 197, 255, 0.1),
+        transparent 26rem
+      ),
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.045),
+        rgba(255, 255, 255, 0.015)
+      ),
+      #0d110f;
+  }
+  .quote-mark {
+    position: absolute;
+    z-index: 1;
+    width: clamp(110px, 16vw, 230px);
+    opacity: 0.22;
+    pointer-events: none;
+    user-select: none;
+  }
+  .quote-mark--open {
+    left: clamp(16px, 4vw, 70px);
+    top: clamp(20px, 4vw, 56px);
+  }
+  .quote-mark--close {
+    right: clamp(16px, 4vw, 70px);
+    bottom: clamp(20px, 4vw, 56px);
+    transform: rotate(180deg);
+  }
+  @media (max-width: 600px) {
+    .quote-panel {
+      border-radius: 26px;
+    }
+  }
+
+  /* Form fields */
+  .field {
+    width: 100%;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 14px 15px;
+  }
+  .field:focus {
+    border-color: rgba(142, 197, 255, 0.6);
+    box-shadow: 0 0 0 3px rgba(142, 197, 255, 0.08);
+  }
+
+  /* Leadership quote */
+  .team-quote {
+    margin: 22px 0 0;
+    padding-left: 18px;
+    border-left: 3px solid #68b2ff;
+    color: #f5f8f5;
+    font-size: 1.12rem;
+    font-style: italic;
+  }
+  .team-quote cite {
+    display: block;
+    margin-top: 12px;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: #aab5ad;
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+}

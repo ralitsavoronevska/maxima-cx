@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none" role="img" aria-label="Rising customer satisfaction score illustration">
+  <defs>
+    <linearGradient id="ds-bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c1422"/>
+      <stop offset="1" stop-color="#05080d"/>
+    </linearGradient>
+    <linearGradient id="ds-grad" x1="0" y1="1" x2="1" y2="0">
+      <stop stop-color="#8ec5ff"/>
+      <stop offset="0.5" stop-color="#68b2ff"/>
+      <stop offset="1" stop-color="#007dfe"/>
+    </linearGradient>
+    <radialGradient id="ds-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#68b2ff" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#68b2ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#ds-bg)"/>
+  <circle cx="400" cy="240" r="250" fill="url(#ds-glow)"/>
+
+  <!-- five-star rating -->
+  <g fill="url(#ds-grad)">
+    <g transform="translate(276,92)"><path d="M0 -16 L3.76 -5.18 L15.22 -4.94 L6.09 1.97 L9.41 12.94 L0 6.4 L-9.41 12.94 L-6.09 1.97 L-15.22 -4.94 L-3.76 -5.18 Z"/></g>
+    <g transform="translate(338,92)"><path d="M0 -16 L3.76 -5.18 L15.22 -4.94 L6.09 1.97 L9.41 12.94 L0 6.4 L-9.41 12.94 L-6.09 1.97 L-15.22 -4.94 L-3.76 -5.18 Z"/></g>
+    <g transform="translate(400,92)"><path d="M0 -16 L3.76 -5.18 L15.22 -4.94 L6.09 1.97 L9.41 12.94 L0 6.4 L-9.41 12.94 L-6.09 1.97 L-15.22 -4.94 L-3.76 -5.18 Z"/></g>
+    <g transform="translate(462,92)"><path d="M0 -16 L3.76 -5.18 L15.22 -4.94 L6.09 1.97 L9.41 12.94 L0 6.4 L-9.41 12.94 L-6.09 1.97 L-15.22 -4.94 L-3.76 -5.18 Z"/></g>
+    <g transform="translate(524,92)"><path d="M0 -16 L3.76 -5.18 L15.22 -4.94 L6.09 1.97 L9.41 12.94 L0 6.4 L-9.41 12.94 L-6.09 1.97 L-15.22 -4.94 L-3.76 -5.18 Z"/></g>
+  </g>
+
+  <!-- satisfaction score ring -->
+  <circle cx="400" cy="262" r="108" fill="none" stroke="#1b2a3f" stroke-width="18"/>
+  <circle cx="400" cy="262" r="108" fill="none" stroke="url(#ds-grad)" stroke-width="18"
+    stroke-linecap="round" stroke-dasharray="577 679" transform="rotate(-90 400 262)"/>
+
+  <!-- rising trend inside ring -->
+  <g stroke="url(#ds-grad)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M352 300 L388 264 L412 282 L450 226"/>
+    <path d="M426 224 L452 220 L452 246"/>
+  </g>
+  <circle cx="352" cy="300" r="5" fill="url(#ds-grad)"/>
+</svg>
