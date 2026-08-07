@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none" role="img" aria-label="">
+  <defs>
+    <linearGradient id="pd-bg" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#0c1422"/><stop offset="1" stop-color="#05080d"/></linearGradient>
+    <linearGradient id="pd-g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8ec5ff"/><stop offset="0.5" stop-color="#68b2ff"/><stop offset="1" stop-color="#007dfe"/></linearGradient>
+    <radialGradient id="pd-glow" cx="0.5" cy="0.5" r="0.5"><stop stop-color="#68b2ff" stop-opacity="0.38"/><stop offset="1" stop-color="#68b2ff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#pd-bg)"/>
+  <circle cx="300" cy="170" r="230" fill="url(#pd-glow)"/>
+  <rect x="150" y="70" width="300" height="200" rx="16" fill="#0a111c" stroke="url(#pd-g)" stroke-width="2.4"/>
+  <line x1="150" y1="104" x2="450" y2="104" stroke="url(#pd-g)" stroke-width="1.6" opacity="0.5"/>
+  <circle cx="170" cy="87" r="4" fill="url(#pd-g)"/>
+  <circle cx="184" cy="87" r="4" fill="url(#pd-g)" opacity="0.6"/>
+  <circle cx="198" cy="87" r="4" fill="url(#pd-g)" opacity="0.35"/>
+  <g fill="url(#pd-g)">
+    <rect x="176" y="210" width="24" height="40" rx="5" opacity="0.5"/>
+    <rect x="212" y="188" width="24" height="62" rx="5" opacity="0.65"/>
+    <rect x="248" y="220" width="24" height="30" rx="5" opacity="0.45"/>
+    <rect x="284" y="166" width="24" height="84" rx="5" opacity="0.8"/>
+  </g>
+  <path d="M180 150 L220 134 L262 156 L306 124 L350 144 L404 116" stroke="url(#pd-g)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="392" cy="206" r="34" fill="none" stroke="#1b2a3f" stroke-width="10"/>
+  <circle cx="392" cy="206" r="34" fill="none" stroke="url(#pd-g)" stroke-width="10" stroke-linecap="round" stroke-dasharray="160 214" transform="rotate(-90 392 206)"/>
+</svg>

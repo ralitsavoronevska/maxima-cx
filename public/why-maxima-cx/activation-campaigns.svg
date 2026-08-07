@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none" role="img" aria-label="">
+  <defs>
+    <linearGradient id="ac-bg" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#0c1422"/><stop offset="1" stop-color="#05080d"/></linearGradient>
+    <linearGradient id="ac-g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8ec5ff"/><stop offset="0.5" stop-color="#68b2ff"/><stop offset="1" stop-color="#007dfe"/></linearGradient>
+    <radialGradient id="ac-glow" cx="0.5" cy="0.5" r="0.5"><stop stop-color="#68b2ff" stop-opacity="0.4"/><stop offset="1" stop-color="#68b2ff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#ac-bg)"/>
+  <circle cx="290" cy="170" r="230" fill="url(#ac-glow)"/>
+  <g stroke="url(#ac-g)" fill="none" stroke-width="4" stroke-linecap="round">
+    <circle cx="290" cy="180" r="74"/>
+    <circle cx="290" cy="180" r="42"/>
+    <line x1="290" y1="86" x2="290" y2="112"/>
+    <line x1="290" y1="248" x2="290" y2="274"/>
+    <line x1="196" y1="180" x2="222" y2="180"/>
+    <line x1="358" y1="180" x2="384" y2="180"/>
+  </g>
+  <circle cx="290" cy="180" r="15" fill="url(#ac-g)"/>
+  <path d="M455 92 C457 112 468 122 488 124 C468 126 457 136 455 156 C453 136 442 126 422 124 C442 122 453 112 455 92 Z" fill="url(#ac-g)"/>
+  <path d="M150 248 C151 259 157 265 168 266 C157 267 151 273 150 284 C149 273 143 267 132 266 C143 265 149 259 150 248 Z" fill="url(#ac-g)" opacity="0.8"/>
+</svg>

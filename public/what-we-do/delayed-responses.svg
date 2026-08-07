@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none" role="img" aria-label="Fast, timely customer response illustration">
+  <defs>
+    <linearGradient id="dr-bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c1422"/>
+      <stop offset="1" stop-color="#05080d"/>
+    </linearGradient>
+    <linearGradient id="dr-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#8ec5ff"/>
+      <stop offset="0.5" stop-color="#68b2ff"/>
+      <stop offset="1" stop-color="#007dfe"/>
+    </linearGradient>
+    <radialGradient id="dr-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#68b2ff" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#68b2ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#dr-bg)"/>
+  <circle cx="410" cy="225" r="250" fill="url(#dr-glow)"/>
+
+  <!-- chat bubble -->
+  <path d="M300 110 H560 a40 40 0 0 1 40 40 V270 a40 40 0 0 1 -40 40 H400 l-46 44 v-44 H300 a40 40 0 0 1 -40 -40 V150 a40 40 0 0 1 40 -40 Z"
+    fill="none" stroke="url(#dr-grad)" stroke-width="3.4"/>
+
+  <!-- lightning (instant reply) -->
+  <path d="M452 146 L388 224 H432 L420 302 L500 208 H452 Z" fill="url(#dr-grad)"/>
+
+  <!-- motion / speed lines -->
+  <g stroke="url(#dr-grad)" stroke-width="6" stroke-linecap="round" opacity="0.8">
+    <path d="M150 178 H238"/>
+    <path d="M116 226 H214"/>
+    <path d="M150 274 H238"/>
+  </g>
+
+  <!-- speed gauge badge -->
+  <path d="M555 388 a58 58 0 0 1 116 0" fill="none" stroke="#1b2a3f" stroke-width="12" stroke-linecap="round"/>
+  <path d="M555 388 a58 58 0 0 1 92 -44" fill="none" stroke="url(#dr-grad)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M613 388 L650 354" stroke="url(#dr-grad)" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="613" cy="388" r="7" fill="url(#dr-grad)"/>
+</svg>

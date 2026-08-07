@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none" role="img" aria-label="">
+  <defs>
+    <linearGradient id="vip-bg" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#0c1422"/><stop offset="1" stop-color="#05080d"/></linearGradient>
+    <linearGradient id="vip-g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8ec5ff"/><stop offset="0.5" stop-color="#68b2ff"/><stop offset="1" stop-color="#007dfe"/></linearGradient>
+    <radialGradient id="vip-glow" cx="0.5" cy="0.5" r="0.5"><stop stop-color="#68b2ff" stop-opacity="0.4"/><stop offset="1" stop-color="#68b2ff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#vip-bg)"/>
+  <circle cx="300" cy="170" r="230" fill="url(#vip-glow)"/>
+  <path d="M196 232 L226 132 L263 188 L300 116 L337 188 L374 132 L404 232 Z" fill="url(#vip-g)"/>
+  <rect x="196" y="238" width="208" height="22" rx="7" fill="url(#vip-g)"/>
+  <g fill="#05080d"><circle cx="226" cy="132" r="7"/><circle cx="300" cy="116" r="7"/><circle cx="374" cy="132" r="7"/></g>
+  <path d="M150 110 C151 123 158 130 171 131 C158 132 151 139 150 152 C149 139 142 132 129 131 C142 130 149 123 150 110 Z" fill="url(#vip-g)" opacity="0.85"/>
+  <path d="M452 150 C453 161 459 167 470 168 C459 169 453 175 452 186 C451 175 445 169 434 168 C445 167 451 161 452 150 Z" fill="url(#vip-g)" opacity="0.7"/>
+</svg>
