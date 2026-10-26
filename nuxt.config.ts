@@ -108,4 +108,10 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  nitro: {
+    prerender: {
+      concurrency: 1,
+    },
+  },
 });
